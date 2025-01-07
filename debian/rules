@@ -15,6 +15,13 @@
 override_dh_auto_configure:
 	dh_auto_configure
 	sed -i \
-	  -e 's/^SYSTEMDDIR\s*=.*/SYSTEMDDIR = \/lib\/systemd\/system/' \
 	  -e 's/ChangeLog//' \
 	  Makefile
+
+execute_after_dh_auto_install:
+	# Let dh place btrbk.service and btrbk.timer.
+	mv debian/btrbk/usr/lib/systemd/system/* debian/
+	rmdir debian/btrbk/usr/lib/systemd/system debian/btrbk/usr/lib/systemd
+
+execute_after_dh_auto_clean:
+	rm -f debian/btrbk.service debian/btrbk.timer
