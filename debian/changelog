@@ -1,3 +1,11 @@
+btrbk (0.32.6-2) unstable; urgency=medium
+
+  * Upload to Debian unstable
+  * Acknowledging NMU 0.32.5-1.1 (was not part of upload to
+    experimental)
+
+ -- Yaroslav Halchenko <debian@onerussian.com>  Mon, 06 Jan 2025 19:26:20 -0500
+
 btrbk (0.32.6-1) experimental; urgency=medium
 
   * New Upstream Release
